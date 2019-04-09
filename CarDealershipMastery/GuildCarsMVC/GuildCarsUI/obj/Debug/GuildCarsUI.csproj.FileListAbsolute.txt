@@ -1,0 +1,2 @@
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsUI\obj\Debug\GuildCarsUI.csprojAssemblyReference.cache
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsUI\obj\Debug\GuildCarsUI.csproj.CoreCompileInputs.cache

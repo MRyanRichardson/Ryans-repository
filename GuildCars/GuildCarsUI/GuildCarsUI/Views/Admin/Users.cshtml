@@ -1,0 +1,33 @@
+﻿@model List<GuildCarsUI.Models.ViewModel.UsersVM>
+@{
+    ViewBag.Title = "Users";
+}
+<h2>Users</h2>
+<div class="row">
+    <div class="col-xs-12" style="margin-bottom: 10px">
+        @Html.ActionLink("Add a New User", "AddUser", "Admin")
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <table class="table table-bordered table-striped">
+            <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th></th>
+            </tr>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.LastName</td>
+                    <td>@user.FirstName</td>
+                    <td>@user.Email</td>
+                    <td>@user.RoleName</td>
+                    <td>@Html.ActionLink("edit", "EditUser", "Admin", new { userId = user.UserId }, new { })</td>
+                </tr>
+            }
+        </table>
+    </div>
+</div>

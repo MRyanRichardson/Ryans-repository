@@ -1,0 +1,52 @@
+﻿@model GuildCarsUI.Models.ViewModel.MakesVM
+@{
+    ViewBag.Title = "Makes";
+}
+<h2>Makes</h2>
+<div class="row">
+    <div class="col-xs-12" style="border:2px solid #333; margin-bottom:25px; padding: 15px;">
+        @using (Html.BeginForm("AddMake", "Admin", FormMethod.Post, new { @class = "form-inline" }))
+        {
+
+            <div class="row">
+                <div class="col-xs-1" style="padding-right: 0;">
+                    <label for="MakeName">New Make</label>
+                </div>
+                <div class="col-xs-2">
+                    @Html.TextBoxFor(m => m.MakeName, new { @class = "form-control" })
+                </div>
+                <div class="col-xs-2">
+                    <button type="submit" class="btn btn-default">Save</button><br />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-4 col-xs-offset-1">
+                    @Html.ValidationMessageFor(m => m.MakeName)
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6">
+        <div class="tableFixHead">
+            <table class="table table-bordered table-striped mb-0" style="border:2px solid #333;">
+                <tr>
+                    <th>Make</th>
+                    <th>Date Added</th>
+                    <th>User</th>
+
+                </tr>
+                @foreach (var make in Model.Makes.OrderBy(m => m.MakeType))
+                {
+                    <tr>
+                        <td>@make.MakeType</td>
+                        <td>@make.DateAdd</td>
+                        <td>@make.UserEmail</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>
+

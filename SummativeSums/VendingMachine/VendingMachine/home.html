@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/home.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/home.js"></script>
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="container">
+
+
+
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                <h1>Vending Machine</h1>
+                <hr />
+            </div>
+        </div>
+
+        <!--  body for the whole web page-->
+        <div id="divBody" class="row">
+
+            <div id="productBody" class="col-md-9  col-sm-3">
+
+
+            </div>
+
+
+            <div class="col-md-3 col-sm-9" id="responseBody">
+
+                <div class="row">
+
+                    <div id="total" class="col-sm-12">
+                        <h4>Total $ In</h4>
+                        <input id="txtTotal" type="text" readonly="readonly"
+                               style="margin-bottom: 10px; width:75%" value="0" />
+                        <div class="row">
+                            <div class="col-md-12">
+                                <button id="addDollar">Add Dollar</button>
+                                <button id="addQuarter">Add Quarter</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="total" class="col-md-12">
+                                <button id="addDime">Add Dime</button>
+                                <button id="addNickel">Add Nickel</button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-12" id="messages">
+                        <h4>Messages</h4>
+                        <input id="txtMessage" type="text" readonly="readonly"  style=" width: 90%; padding:10px;
+                    margin-bottom:10px;" />
+                        <p style="width:90%">Item: <input id="txtItem" type="text" readonly="readonly" style=" width: 60%" /></p>
+                        <button id="makePurchase" style="width:75% !important">Make Purchase</button>
+                    </div>
+                </div>
+
+                <div id="change" class="row ">
+
+                    <div id="change" class="col-sm-12">
+                        <h4>Change</h4>
+                        <input id="txtChange" type="text" readonly="readonly" style="margin-bottom:10px; width:80%; " />
+                        <button id="changeReturn">Change Return</button>
+                        <hr />
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+</html>

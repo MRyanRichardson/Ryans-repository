@@ -1,0 +1,6 @@
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsData\bin\Debug\GuildCarsData.dll
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsData\bin\Debug\GuildCarsData.pdb
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsData\obj\Debug\GuildCarsData.csprojAssemblyReference.cache
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsData\obj\Debug\GuildCarsData.csproj.CoreCompileInputs.cache
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsData\obj\Debug\GuildCarsData.dll
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsData\obj\Debug\GuildCarsData.pdb

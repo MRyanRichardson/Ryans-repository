@@ -1,0 +1,9 @@
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsTest\bin\Debug\GuildCarsTest.dll
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsTest\bin\Debug\GuildCarsTest.pdb
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsTest\bin\Debug\nunit.framework.dll
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsTest\bin\Debug\nunit.framework.pdb
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsTest\bin\Debug\nunit.framework.xml
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsTest\obj\Debug\GuildCarsTest.csproj.CoreCompileInputs.cache
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsTest\obj\Debug\GuildCarsTest.csproj.CopyComplete
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsTest\obj\Debug\GuildCarsTest.dll
+C:\Ryan\ryan-richardson-individual-work\CarDealershipMastery\GuildCarsMVC\GuildCarsTest\obj\Debug\GuildCarsTest.pdb

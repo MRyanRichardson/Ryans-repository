@@ -1,0 +1,24 @@
+﻿@model Exercises.Models.Data.Student
+@{
+    ViewBag.Title = "DeleteStudent";
+}
+<div class="col-xs-12 col-sm-3">
+    @Html.Partial("StudentNav")
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <h3>Delete Student</h3>
+        @Html.ActionLink("Return to Students", "List", "Student")
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(s => s.StudentId)
+            <p style="color: red">Are you sure you would like to delete @Html.DisplayFor(s => s.FirstName)  @Html.DisplayFor(m => m.LastName)?</p>
+            <button type="submit" class="btn btn-sm btn danger">Delete</button>
+            @Html.ActionLink("Cancel", "List", "Student", null, new { @class = "btn btn-btnsm btn-info" })
+        }
+    </div>
+</div>

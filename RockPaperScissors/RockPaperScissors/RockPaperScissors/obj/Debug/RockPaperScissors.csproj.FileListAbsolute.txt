@@ -1,0 +1,14 @@
+C:\Users\richa\Documents\RockPaperScissors\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe.config
+C:\Users\richa\Documents\RockPaperScissors\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe
+C:\Users\richa\Documents\RockPaperScissors\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.pdb
+C:\Users\richa\Documents\RockPaperScissors\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.csprojAssemblyReference.cache
+C:\Users\richa\Documents\RockPaperScissors\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.CoreCompileInputs.cache
+C:\Users\richa\Documents\RockPaperScissors\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.exe
+C:\Users\richa\Documents\RockPaperScissors\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.pdb
+C:\SoftwareGuild\BitBucket\ryan-richardson-individual-work\RockPaperScissors\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe.config
+C:\SoftwareGuild\BitBucket\ryan-richardson-individual-work\RockPaperScissors\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.exe
+C:\SoftwareGuild\BitBucket\ryan-richardson-individual-work\RockPaperScissors\RockPaperScissors\RockPaperScissors\bin\Debug\RockPaperScissors.pdb
+C:\SoftwareGuild\BitBucket\ryan-richardson-individual-work\RockPaperScissors\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.csprojAssemblyReference.cache
+C:\SoftwareGuild\BitBucket\ryan-richardson-individual-work\RockPaperScissors\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.csproj.CoreCompileInputs.cache
+C:\SoftwareGuild\BitBucket\ryan-richardson-individual-work\RockPaperScissors\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.exe
+C:\SoftwareGuild\BitBucket\ryan-richardson-individual-work\RockPaperScissors\RockPaperScissors\RockPaperScissors\obj\Debug\RockPaperScissors.pdb

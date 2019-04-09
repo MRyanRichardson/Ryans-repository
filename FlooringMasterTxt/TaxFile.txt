@@ -1,0 +1,6 @@
+State , StateName, Taxrate
+OH,Ohio,6.25
+KY,Kentucky,6.00
+TN,Tennessee,7.00
+FL,Florida,6.00
+GA,Georgia,9.00

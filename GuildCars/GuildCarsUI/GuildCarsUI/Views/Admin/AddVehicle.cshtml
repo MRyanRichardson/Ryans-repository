@@ -1,0 +1,175 @@
+﻿@model GuildCarsModel.Model.VehicleAll
+@{
+    ViewBag.Title = "AddVehicle";
+}
+<div class="container" id="PageColor">
+    @using (Html.BeginForm("AddVehicle", "Admin", FormMethod.Post, new { enctype = "multipart/form-data", id = "admin-form" }))
+    {
+        <h2>Add Vehicle</h2>
+
+        <div class="row">
+            <div class="col-md-4">
+                <label for="addMake">Make</label>
+                @Html.DropDownListFor(m => m.MakeId, Model.slMakes,"-- Select Make --", new { @class = "form-control", id = "make" })
+                @Html.ValidationMessageFor(m => m.MakeId, "", new { @style = "color:red" })
+            </div>
+            <div class="col-md-4">
+                <label for="addModel">Model</label>
+                @Html.DropDownListFor(m => m.ModelId, Model.slModels, "-- Select Model --", new { @class = "form-control", id = "model" })
+                @Html.ValidationMessageFor(m => m.ModelId, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="addType">Type</label>
+                <select class="form-control" id="addType">
+                    <option value="@Model.New=1" selected>New</option>
+                    <option value="@Model.New=0">Used</option>
+                </select>
+            </div>
+            <div class="col-md-4">
+                <label for="addBodyStyle">BodyStyle</label>
+                @Html.DropDownListFor(m => m.BodyStyleId, Model.slBodyStyles, "-- Select Body Style --", new { @class = "form-control", id = "bodyStyle" })
+                @Html.ValidationMessageFor(m => m.BodyStyleId,"", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="addYear">Year</label>
+                @Html.TextBoxFor(m => m.Year, new { @class = "form-control" })
+                 @Html.ValidationMessageFor(m => m.Year,"", new { @style = "color:red" })
+            </div>
+            <div class="col-md-4">
+                <label for="addTransmission">Transmission</label>
+                <select class="form-control">
+                    <option value="@Model.AutomaticTrans=1" selected>Automatic</option>
+                    <option value="@Model.AutomaticTrans=2">Manual</option>
+                </select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="addColor">Color</label>
+                @Html.DropDownListFor(m => m.ColorId, Model.slColors, "-- Select Color --", new { @class = "form-control", id = "color" })
+                @Html.ValidationMessageFor(m => m.ColorId, "", new { @style = "color:red" })
+            </div>
+            <div class="col-md-4">
+                <label for="addInterior">Interior</label>
+                @Html.DropDownListFor(m => m.InteriorId, Model.slInteriors, "-- Select Interior --", new { @class = "form-control", id = "interior" })
+                @Html.ValidationMessageFor(m => m.InteriorId, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="addMileage">Mileage</label>
+                @Html.TextBoxFor(m => m.Mileage, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.Mileage, "", new { @style = "color:red" })
+            </div>
+            <div class="col-md-4">
+                <label for="addVIN">VIN #</label>
+                @Html.TextBoxFor(m => m.VIN, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.VIN, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="row ">
+            <div class="col-md-4">
+                <label for="addMSRP">MSRP</label>
+                @Html.TextBoxFor(m => m.MSRP, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.MSRP, "", new { @style = "color:red" })
+            </div>
+            <div class="col-md-4">
+                <label for="addSalePrice">Sale Price</label>
+                @Html.TextBoxFor(m => m.SalePrice, new { @class = "form-control" })
+                @Html.ValidationMessageFor(m => m.SalePrice, "", new { @style = "color:red" })
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="addDescription">Description</label>
+                @Html.TextAreaFor(m => m.Description, new { @class = "form-control", @rows = 10 })
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 ">
+                <label for="addPicture">Picture</label><br />
+                @Html.TextBoxFor(m => m.VehicleImage, new { type = "file", id = "imgInp", accept = "image/png,image/jpg,image/jpeg" })
+                <img id="blah" src="#"  />
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-md-4 ">
+                <button type="submit" class="btn btn-default">Save</button>
+                @*@Html.ActionLink("Save", "AddVehicle", "Admin", new { @class = " btn btn-primary" })*@
+                @Html.ActionLink("Cancel", "Vehicles", "Admin", new { @class = " btn btn-danger" })
+
+
+            </div>
+        </div>
+    }
+</div>
+@section Scripts{
+    <script>
+        $(document).ready(function () {
+            $(document).on('change', '.btn-file :file', function () {
+                var input = $(this),
+                    label = input.val().replace(/\\/g, '/').replace(/.*\//, '');
+                input.trigger('fileselect', [label]);
+            });
+
+            $('.btn-file :file').on('fileselect', function (event, label) {
+
+                var input = $(this).parents('.input-group').find(':text'),
+                    log = label;
+
+                if (input.length) {
+                    input.val(log);
+                } else {
+                    if (log) alert(log);
+                }
+
+            });
+
+
+            function readURL(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('#blah').attr('src', e.target.result)
+                            .width(150);
+                            
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            function GetModels() {
+                modelSelect.prop('disabled', true);
+                modelSelect.empty();
+
+                $.ajax({
+                    type: "GET",
+                    url: "/api/models/makeId=" + parseInt(makeSelect.val()),
+                    success: function (modelArray) {
+                        $.each(modelArray, function () {
+                            modelSelect.append($("<option />").val(this.ModelId).text(this.ModelName));
+                        });
+
+                        modelSelect.prop('disabled', false);
+                    },
+                    error: function () {
+                        alert("There was an issue contacting our servers. Please try again later.");
+                    }
+                });
+            }
+
+
+            $("#imgInp").change(function () {
+                readURL(this);
+            });
+        });
+    </script>
+}

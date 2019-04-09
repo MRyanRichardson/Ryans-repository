@@ -1,0 +1,6 @@
+Product Type, Cost (Square foot), Labor Cost (Per Square Foot)
+Tile,3.50,4.15
+Wood,5.15,4.75
+Laminate,6.00,5.50
+Carpet,4.50,5.00
+

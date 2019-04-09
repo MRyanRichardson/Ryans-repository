@@ -1,0 +1,3 @@
+OrderNumber,CustomerName,State,TaxRate,ProductType,Area,CostPerSquareFoot,LaborCostPerSquareFoot,MaterialCost,LaborCost,Tax,Total
+2,Dad,IN,6.00,Wood,350,5.15,4.75,1802.50,1662.50,207.90,3672.90
+3,Ryan,MI,5.75,Carpet,700,2.25,2.10,1575.00,1470.00,175.09,3220.09

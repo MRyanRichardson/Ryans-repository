@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "New Vehicles";
+}
+<div class="container" id="PageColor">
+    <h2 class="text-left" style="color:black">Featured Vehicles</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <h3> Quick Search</h3>
+            <input type="text" value="Enter make, model, year">
+        </div>
+        <div class="col-md-4">
+            <div class=" col-md-6">
+                <p>Price</p>
+                @Html.DropDownList(
+                    "--Min--"
+                        )
+                @Html.DropDownList(
+                    "--Max--"
+                        )
+            </div>
+            <button id="button" type="submit">Search</button>
+        </div>
+        <div class="col-md-4">
+            <div class="col-md-12">
+                @Html.DropDownList(
+                    "--No Min--"
+                        )
+                @Html.DropDownList(
+                    "--No Max--"
+                        )
+            </div>
+        </div>
+        
+    </div>
+    <div id="ResultsTables">
+        @***************************************************@
+        @*row 1*@
+        <div class="row">
+            <div class="col-md-3">
+                <p> year, make, model</p>
+                <p>pic of vehicle:</p>
+            </div>
+            <div class="col-md-3">
+                <p>Body Style:</p>
+                <p>Trans:</p>
+                <p>Color:</p>
+            </div>
+            <div class="col-md-3">
+                <p>Interior:</p>
+                <p>Mileage:</p>
+                <p>VIN:</p>
+            </div>
+            <div class="col-md-3">
+                <p>Sale Price:</p>
+                <p>MSRP:</p>
+                <button id="details" type="button">Details</button>
+            </div>
+        </div>
+        @***************************************************@
+        @*row 2*@
+        <div class="row">
+            <div class="col-md-3">
+                <p> year, make, model</p>
+                <p>pic of vehicle:</p>
+            </div>
+            <div class="col-md-3">
+                <p>Body Style:</p>
+                <p>Trans:</p>
+                <p>Color:</p>
+            </div>
+            <div class="col-md-3">
+                <p>Interior:</p>
+                <p>Mileage:</p>
+                <p>VIN:</p>
+            </div>
+            <div class="col-md-3">
+                <p>Sale Price:</p>
+                <p>MSRP:</p>
+                <button id="details" type="button">Details</button>
+            </div>
+        </div>
+        @***************************************************@
+        @*row 3*@
+        <div class="row">
+            <div class="col-md-3">
+                <p> year, make, model</p>
+                <p>pic of vehicle:</p>
+            </div>
+            <div class="col-md-3">
+                <p>Body Style:</p>
+                <p>Trans:</p>
+                <p>Color:</p>
+            </div>
+            <div class="col-md-3">
+                <p>Interior:</p>
+                <p>Mileage:</p>
+                <p>VIN:</p>
+            </div>
+            <div class="col-md-3">
+                <p>Sale Price:</p>
+                <p>MSRP:</p>
+                <button id="details" type="button">Details</button>
+            </div>
+        </div>
+    </div>
+</div>

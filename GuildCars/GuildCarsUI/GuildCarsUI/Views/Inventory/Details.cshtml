@@ -1,0 +1,45 @@
+﻿@model GuildCarsModel.Model.VehicleDisplay
+@{
+    ViewBag.Title = "Details";
+}
+@* All details of vehicles when hitting display button *@
+<div class="container" id="PageColor">
+    <div id="header">
+        <h3 style="text-align:left;">Vehicle Details</h3>
+    </div>
+    <div id="TableBorder">
+        <div class="row">
+            <div class="col-md-3">
+                <p> @Model.MakeType  @Model.ModelType @Model.Year </p>
+                <p>@Model.ImageName</p>
+            </div>
+            <div class="col-md-3">
+                <p>Body Style:@Model.BodyStyleType</p>
+                <p>Trans: @Model.TransmissionType</p>
+                <p>Color:@Model.CarColor</p>
+            </div>
+            <div class="col-md-3">
+                <p>Interior:@Model.InteriorColor</p>
+                <p>Mileage:@Model.Mileage</p>
+                <p>VIN:@Model.VIN</p>
+            </div>
+            <div class="col-md-3">
+                <p>Sale Price:@Model.SalePrice</p>
+                <p>MSRP:@Model.MSRP</p>
+                @* Button to return VIN to contact when user hits contact us in details of vehicle *@
+                @using (Html.BeginForm("Contact", "Home", new { Model.VIN, Model.MakeType , Model.ModelType }))
+                {
+                    <input type="submit" value="Contact Us" class="btn btn-primary btn-success" />
+                }
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-md-offset-3">
+                <p>Description</p>
+            </div>
+            <div class="col-md-8">
+                <p>@Model.Description</p>
+            </div>
+        </div>
+    </div>
+</div>

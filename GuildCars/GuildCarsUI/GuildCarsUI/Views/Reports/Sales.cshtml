@@ -1,0 +1,105 @@
+﻿@model GuildCarsUI.Models.ViewModel.SalesVM
+<h2>Sales</h2>
+<div class="row">
+    <div class="col-xs-12" style="border:2px solid #333; margin-bottom:10px">
+        <h4>Filters</h4>
+        <div class="row">
+            <div class="col-xs-12" style="margin:5px 10px 20px 10px">
+                <form class="form-inline">
+                    <div class="col-xs-3">
+                        <label>User</label>
+                        <select id="user" class="form-control">
+                            <option value="all">--All Users--</option>
+                            @foreach (var user in Model.model)
+                            {
+                                <option value="@user.Value">@user.Text</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-xs-3">
+                        <label>From Date</label>
+                        <input type="date" id="fromDate" class="form-control" />
+                    </div>
+                    <div class="col-xs-3">
+                        <label>To Date</label>
+                        <input type="date" id="toDate" class="form-control" />
+                    </div>
+                    <div class="col-xs-3">
+                        <button type="button" class="btn btn-default" id="search-button">Search</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-6" id="report-container">
+
+    </div>
+</div>
+@section Scripts {
+    <script>
+        $(document).ready(function () {
+
+            $("#search-button").click(FilterUsers);
+
+        });
+
+        function FilterUsers() {
+            var user = $("#user option:selected").text();
+                fromDate = Date.parse($("#fromDate").val()).toString(),
+                toDate = Date.parse($("#toDate").val()).toString(),
+                report = $("#report-container");
+
+            if (isNaN(fromDate))
+                fromDate = 0;
+
+            if (isNaN(toDate))
+                toDate = 0;
+
+            if (user == "--All Users--")
+                user = "0";
+
+            var searchUrl = "http://localhost:65000/api/sales/user=" + user +
+                "/from=" + fromDate +
+                "/to=" + toDate;
+            //[Route("api/sales/user={userId}/from={from}/to={to}")]
+            $.ajax({
+                type: "GET",
+                url: searchUrl,
+                success: function (salesInfo) {
+
+                    report.empty();
+
+                    if (salesInfo.length === 0) {
+                        report.html("<h2>No results for your search!</h2>");
+                        return;
+                    }
+
+                    report.html('<h4>Search Results</h4>' +
+                        '<table class="table table-bordered table-striped">' +
+                        '<tbody id="searchResults">' +
+                        '<tr>' +
+                        '<th>User</th>' +
+                        '<th>Total Sales</th>' +
+                        '<th>Total Vehicles</th>' +
+                        '</tr>' +
+                        '</tbody>' +
+                        '</table>');
+
+                    $.each(salesInfo, function (index, user) {
+                        var row = $('<tr>' +
+                            '<td>' + user.User + '</td>' +
+                            '<td>' + user.TotalSales.toLocaleString("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 0 }) + '</td>' +
+                            '<td>' + user.TotalVehicles + '</td>' +
+                            '</tr>').get(0);
+
+                        searchResults.append(row);
+                    });;
+                },
+                error: function () {
+                    alert("There seems to be a problem communicating with our servers. Please try again later. We apologize for the inconvenience.");
+                }
+            });
+        }
+</script>}

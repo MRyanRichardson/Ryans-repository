@@ -1,0 +1,67 @@
+﻿@model GuildCarsUI.Models.ViewModel.ModelsVM
+@{
+    ViewBag.Title = "Models";
+}
+<div class="container">
+    <div class="row" style="margin-left:1px">
+        <h2>Models</h2>
+        <div class="col-xs-12" style="border:2px solid #333; margin-bottom:25px; padding: 15px;">
+            @using (Html.BeginForm("AddModel", "Admin", FormMethod.Post))
+            {
+                <div class="row">
+                    <div class="col-xs-1" style="padding-right: 0;">
+                        <label for="Model">New Model</label>
+                    </div>
+                    <div class="col-xs-3">
+                        @Html.TextBoxFor(m => m.modelToAdd.ModelType, new { @class = "form-control" })
+                    </div>
+                    <div class="col-xs-1" style="padding-right: 0;">
+                        <label for="MakeName">Make</label>
+                    </div>
+                    <div class="col-xs-3 dropdown">
+                        @*@Html.DropDownListFor(m => m.modelToAdd.ModelID, Model.Makes, new { @class = "form-control", style = "width: 100%;" })*@
+                        <select name="ddlMakes" id="ddlMakes" class="form-control">
+                            <option selected disabled>-- Choose Model --</option>
+                            @foreach (var make in Model.Makes.OrderBy(t => t.MakeType))
+                            {
+                                <option value="@make.MakeID">@make.MakeType</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="col-xs-2">
+                        @using (Html.BeginForm())
+                        {
+                            <button type="submit" class="btn btn-primary">Save</button><br />
+                        }
+                    </div>
+                </div>
+                <div class="col-xs-6 col-xs-offset-2">
+                    @Html.ValidationMessageFor(m => m.modelToAdd.ModelType)
+                </div>
+                <div class="row">
+                    <div class="col-xs-8">
+                        <div class="tableFixHead">
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>Make</th>
+                                    <th>Model</th>
+                                    <th>Date Added</th>
+                                    <th>User</th>
+                                </tr>
+                                @foreach (var m in Model.MakeModels.OrderBy(m => m.Make).ThenBy(m => m.Model))
+                                {
+                                    <tr>
+                                        <td>@m.Make</td>
+                                        <td>@m.Model</td>
+                                        <td>@m.DateAdd.ToShortDateString()</td>
+                                        <td>@m.UserEmail</td>
+                                    </tr>
+                                }
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

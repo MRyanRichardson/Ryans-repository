@@ -1,0 +1,54 @@
+﻿/*source product columns*/
+/*css styling for items*/
+#product {
+    margin: 3px 3px 3px 3px;
+    border: 4px solid black;
+    border-radius: 10px;
+    width: 60%;
+}
+    /*css styling form when you hover over items*/
+    #product:hover {
+        -webkit-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        background-color: aquamarine;
+        cursor: pointer;
+    }
+    /*css styling form when item is clicked*/
+    #product:focus {
+        border-radius: 10px;
+        border: 4px solid #ff0000;
+        background-color: aquamarine;
+    }
+/*css styling for our total textbox*/
+#total {
+    align-content: center;
+    text-align: center;
+}
+/*css styling for our messages textbox*/
+#messages {
+    align-content: center;
+    text-align: center;
+}
+/*css styling for our change textbox*/
+#change {
+    align-content: center;
+    text-align: center;
+}
+/*css styling for all of our buttons*/
+button {
+    width: 45% !important;
+    margin-bottom: 5px !important;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    background-color: aquamarine;
+    border-radius: 10px;
+}
+    /*css styling for when client hovers over button*/
+    button:hover {
+        background-color: mediumaquamarine;
+        color: white;
+    }
+/*css styling for our response rows*/
+#responseBody {
+    border: 3px dashed black;
+}

@@ -1,0 +1,23 @@
+﻿@model GuildCarsModel.Model.Specials
+
+@{
+    ViewBag.Title = "DeleteSpecial";
+}
+
+<div class="row">
+    <div class="col-xs-12">
+        <h3>Delete Specials</h3>       
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        @using (Html.BeginForm())
+        {
+            @Html.HiddenFor(m => m.SpecialID)
+            <p>Are you sure that you wish to delete @Html.DisplayFor(m => m.SpecialType)?</p>
+            @Html.ActionLink("Delete", "DeleteSpecials", "Admin",new { id = Model.SpecialID }, new {@class ="btn btn-sm btn-danger" })
+            @Html.ActionLink("Cancel", "Specials", "Admin", null, new { @class = "btn btn-sm btn-info" })
+        }
+    </div>
+</div>
+

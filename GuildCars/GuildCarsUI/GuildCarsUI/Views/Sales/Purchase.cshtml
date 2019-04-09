@@ -1,0 +1,114 @@
+﻿@model GuildCarsUI.Models.ViewModel.PurchaseVM
+
+@{ 
+    ViewBag.Title = "Purchase";
+}
+<div class="container" id="PageColor">
+    <div id="header">
+        <h3 id="HeaderAlign">Purchase Vehicle</h3>
+    </div>
+    <div id="TableBorder">
+        <div class="row">
+            <div class="col-md-3">
+                <p>@Model.Vehicle.Year @Model.Vehicle.MakeType @Model.Vehicle.ModelType</p>
+                <p> <p><img src="~/Images/inventory-@(Model.Vehicle.VehicleID).png" style="height: 80px; margin: 15px auto;border-radius:5px" /></p>:</p>
+            </div>
+            <div class="col-md-3">
+                <p>@Model.Vehicle.BodyStyleType</p>
+                <p>Trans:@Model.Vehicle.TransmissionType</p>
+                <p>Color:@Model.Vehicle.CarColor</p>
+            @*</div>*@
+            <div class="col-md-3">
+                <p>Interior:@Model.Vehicle.InteriorColor</p>
+                <p>Mileage:@Model.Vehicle.Mileage</p>
+                <p>VIN:@Model.Vehicle.VIN</p>
+            </div>
+            <div class="col-md-3">
+                <p>Sale Price:@Model.Vehicle.SalePrice</p>
+                <p>MSRP:@Model.Vehicle.MSRP</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-9 col-md-offset-3">
+                <p>Description: @Model.Vehicle.Description</p>
+            </div>
+        </div>
+    </div>
+        </div>
+    <h3 id="HeaderAlign">Sales Information</h3>
+
+    @using (Html.BeginForm("Purchase", "Sales", FormMethod.Post, new { id = "purchase-form" }))
+    {
+        @Html.HiddenFor(m => m.Vehicle.VehicleID)
+        @Html.ValidationMessageFor(m => m.Customer)
+        @Html.ValidationSummary(true)
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="name">Name</label>
+                @Html.TextBoxFor(m => m.Customer.CustomerName, new { @class = "form-control", id = "name" })
+                @Html.ValidationMessageFor(m => m.Customer.CustomerName)
+            </div>
+            <div class="col-xs-4 col-xs-offset-1">
+                <label for="phone">Phone</label>
+                @Html.TextBoxFor(m => m.Customer.Phone, new { @class = "form-control", id = "phone" })
+                @Html.ValidationMessageFor(m => m.Customer.Phone)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="email">Email</label>
+                @Html.TextBoxFor(m => m.Customer.Email, new { @class = "form-control", id = "email" })
+                @Html.ValidationMessageFor(m => m.Customer.Email)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="street1">Street 1</label>
+                @Html.TextBoxFor(m => m.Customer.Street1, new { @class = "form-control", id = "street1" })
+                @Html.ValidationMessageFor(m => m.Customer.Street1)
+            </div>
+            <div class="col-xs-4 col-xs-offset-1">
+                <label for="street2">Street 2</label>
+                @Html.TextBoxFor(m => m.Customer.Street2, new { @class = "form-control", id = "street2" })
+                @Html.ValidationMessageFor(m => m.Customer.Street2)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="city">City</label>
+                @Html.TextBoxFor(m => m.Customer.City, new { @class = "form-control", id = "city" })
+                @Html.ValidationMessageFor(m => m.Customer.City)
+            </div>
+            <div class="col-xs-4 col-xs-offset-1">
+                <label for="state">State</label>
+                @Html.DropDownListFor(m => m.Customer.StateId, Model.States, "", new { @class = "form-control" })<br />
+                @Html.ValidationMessageFor(m => m.Customer.StateId)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="zip">ZIP</label>
+                @Html.TextBoxFor(m => m.Customer.ZipCode, new { @class = "form-control", id = "zip" })
+                @Html.ValidationMessageFor(m => m.Customer.ZipCode)
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-xs-4">
+                <label for="pprice">Customer Price</label>
+                @Html.TextBoxFor(m => m.Customer.PurchasePrice, new { @class = "form-control", id = "pprice" })
+                @Html.ValidationMessageFor(m => m.Customer.PurchasePrice)
+            </div>
+            <div class="col-xs-4 col-xs-offset-1">
+                <label for="ptype">Finance Type</label>
+                @Html.DropDownListFor(m => m.Customer.PurchaseTypeName, Model.FinanceTypes, "", new { @class = "form-control", id = "ptype" })<br />
+                @Html.ValidationMessageFor(m => m.Customer.PurchaseTypeName)
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="submit" class="btn btn-default">Save</button>
+            </div>
+        </div>
+    }</div>

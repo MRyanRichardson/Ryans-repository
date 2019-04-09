@@ -1,0 +1,55 @@
+@model GuildCarsUI.Models.ViewModel.SpecialsVM
+@{
+
+    ViewBag.Title = "Specials";
+}
+<div class="container">
+    @using (Html.BeginForm("AddSpecials", "Admin", FormMethod.Post))
+    {
+
+        <h2 id="HeaderAlign">Specials</h2>
+
+        <div class="row" id="TableBorder">
+            <div class="col-md-12">
+                <div class="col-md-8">
+                    <label for="sTitle" id="sTitle">Title</label>
+                    @Html.TextBoxFor(m => m.SpecialType, new { @class = "form-control" })
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <div class="col-md-8">
+                    <label for="description">Description</label>
+                    @Html.TextAreaFor(m => m.specialDescription, new { @class = "form-control", @rows = 10 })
+                </div>
+            </div>
+            <hr />
+            <div class="col-md-12">
+                <div class="col-md-8" style="margin-top:20px; margin-bottom:10px;">
+                    <button type="submit" class="btn btn-primary form-horizontal">Save</button>
+                    @Html.ActionLink("Cancel", "Specials", "Admin", new { @class = "btn btn-danger form-horizontal" })
+                </div>
+            </div>
+        </div>
+    }
+    <div class="row">
+        <div class="col-md-12">
+            @foreach (var sp in Model.special)
+            {
+                <div class="row" id="TableBorder">
+                    <div class="col-md-2">
+                        <h1 id="AlignCenter">$</h1>
+                    </div>
+                    <div class="col-md-9">
+                        <h3 style="font-weight:bolder;">@sp.SpecialType</h3>
+                        <p>@sp.SpecialDescription</p>
+                    </div>
+                    <div class="col-md-1" style="margin-top:10px">
+                        @Html.ActionLink("Delete", "DeleteSpecialsConfirm", "Admin", sp, new { @class = "btn btn-danger" })
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+</div>
